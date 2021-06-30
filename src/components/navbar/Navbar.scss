@@ -1,0 +1,92 @@
+@use "../../styles/utils/variables" as *;
+@use "../../styles/utils/mixins" as *;
+@use "../../styles/utils/breakpoints" as *;
+
+nav {
+  margin: 1rem auto;
+  .container {
+    @include container;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @include breakpoint-up(md) {
+    .mobileMenu {
+      display: none;
+    }
+
+    .menu {
+      display: flex;
+      justify-content: space-between;
+
+      li {
+        list-style: none;
+        margin-right: 20px;
+
+        a {
+          color: $gray-color;
+          text-decoration: none;
+          font-weight: 500;
+          opacity: 0.5;
+        }
+
+        .active {
+          opacity: 1;
+          font-weight: 700;
+        }
+      }
+    }
+  }
+
+  @include breakpoint-down(md) {
+    .mobileMenu {
+      display: initial;
+    }
+
+    .menu {
+      position: absolute;
+      top: -150vh;
+      left: 0%;
+      right: 0%;
+      width: 50vh;
+      margin: auto;
+      height: 50vh;
+      background-color: $primary-color;
+      z-index: 1000;
+      transition: all 0.7s ease-in-out;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2rem 0rem;
+      border-radius: 30px;
+
+      @include breakpoint-down(sm) {
+        width: 90%;
+      }
+
+      li {
+        list-style: none;
+        margin-right: 10px;
+
+        a {
+          color: white;
+          text-decoration: none;
+          font-weight: 500;
+          opacity: 0.7;
+        }
+
+        .active {
+          opacity: 1;
+          font-weight: 800;
+        }
+      }
+
+      &.open {
+        top: 20%;
+      }
+    }
+  }
+}

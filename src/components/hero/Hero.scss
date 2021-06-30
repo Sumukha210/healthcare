@@ -1,0 +1,59 @@
+@use "../../styles/utils/variables" as *;
+@use "../../styles/utils/mixins" as *;
+@use "../../styles/utils/breakpoints" as *;
+
+.container {
+  @include container;
+
+  .left {
+    p {
+      margin: 1rem auto;
+      color: $light-gray;
+      line-height: 1.8rem;
+    }
+
+    button {
+      margin-top: 1rem;
+    }
+  }
+
+  .dots {
+    position: absolute;
+    top: 14%;
+    left: 0%;
+  }
+
+  @include breakpoint-up(lg) {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include custom-breakpoint(sm, lg) {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    .right {
+      img {
+        height: 300px;
+      }
+    }
+  }
+
+  @include breakpoint-down(lg) {
+    margin-top: 3rem;
+
+    .right {
+      margin-top: 2rem;
+    }
+  }
+
+  img {
+    object-fit: cover;
+    max-width: 100%;
+  }
+}
