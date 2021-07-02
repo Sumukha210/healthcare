@@ -42,6 +42,7 @@ nav {
   @include breakpoint-down(md) {
     .mobileMenu {
       display: initial;
+      cursor: pointer;
     }
 
     .menu {

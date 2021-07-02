@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800&display=swap");
 
 @import "./variables";
+@import "./breakpoints";
 
 * {
   margin: 0;
@@ -16,11 +17,12 @@ body {
 }
 
 .btn {
-  padding: 0.9em 1.6em;
+  padding: 1.2em 1.6em;
   border-radius: 34px;
   font-size: 0.9rem;
   border: none;
   outline: none;
+  width: 200px;
 
   &-primary {
     background-color: $primary-color;
@@ -33,9 +35,35 @@ body {
       background-color: lighten($primary-color, 10%);
     }
   }
+
+  &-outline-primary {
+    background-color: transparent;
+    color: $gray-color;
+    font-weight: 600;
+    border: 1px solid $primary-color;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      background-color: lighten($primary-color, 10%);
+      color: white;
+    }
+  }
 }
 
 .heading {
   font-size: clamp(1.4rem, 6vw, 3rem);
   font-weight: 800;
+
+  &-2 {
+    font-size: clamp(1rem, 6vw, 2.1rem);
+    font-weight: 800;
+  }
+}
+
+.margin-top {
+  margin-top: 4rem !important;
+
+  @include breakpoint-down(sm) {
+    margin-top: 2rem !important;
+  }
 }

@@ -1,0 +1,72 @@
+@use "../../../styles/utils/variables" as *;
+@use "../../../styles/utils/mixins" as *;
+@use "../../../styles/utils/breakpoints" as *;
+
+.container {
+  @include container;
+  display: grid;
+
+  img {
+    max-width: 100%;
+  }
+
+  @include breakpoint-up(lg) {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-column-gap: 5vw;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  @include custom-breakpoint(md, lg) {
+    text-align: center;
+  }
+
+  .info {
+    @include breakpoint-down(xl) {
+      margin: 2rem 0rem;
+    }
+
+    @include custom-breakpoint(sm, lg) {
+      text-align: center;
+    }
+  }
+
+  .heading-2 {
+    &::after {
+      content: "";
+      display: block;
+      height: 4px;
+      width: 50px;
+      margin: 1.2rem 0rem;
+      text-align: left;
+      background-color: $primary-color;
+    }
+
+    @include custom-breakpoint(sm, lg) {
+      margin-top: 3rem;
+      &::after {
+        text-align: center;
+        margin: 1.2rem auto;
+      }
+    }
+
+    @include breakpoint-down(sm) {
+      margin-top: 1rem;
+      width: 75%;
+    }
+
+    @include breakpoint-up(lg) {
+      width: 65%;
+    }
+  }
+
+  .content {
+    color: $light-gray;
+    margin: 1.4rem 0;
+    line-height: 1.7rem;
+    @include breakpoint-up(lg) {
+      width: 80%;
+    }
+  }
+}
