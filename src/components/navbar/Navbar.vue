@@ -2,7 +2,10 @@
   <nav>
     <div class="container">
       <div class="logo">
-        <img src="/images/logo.png" alt="logo" />
+        <img
+          :src="!isOpen ? '/images/logo-light.png' : '/images/logo.png'"
+          alt="logo"
+        />
       </div>
 
       <ul :class="`menu ${!isOpen && 'open'}`">
@@ -14,9 +17,14 @@
       </ul>
 
       <div class="mobileMenu" @click="handleMenu()">
-        <i :class="isOpen ? 'fas fa-bars' : 'fas fa-times'"></i>
+        <i
+          :class="isOpen ? 'fas fa-bars' : 'fas fa-times'"
+          :style="{ color: !isOpen ? 'white' : 'black' }"
+        ></i>
       </div>
     </div>
+
+    <div class="overlay" v-if="!isOpen"></div>
   </nav>
 </template>
 
@@ -31,6 +39,11 @@ export default {
   methods: {
     handleMenu() {
       this.isOpen = !this.isOpen;
+      if (!this.isOpen) {
+        document.body.style.overflow = "hidden";
+      } else {
+        document.body.style.overflow = "initial";
+      }
     },
   },
 };
