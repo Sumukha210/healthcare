@@ -1,0 +1,171 @@
+@use "../../styles/utils/variables" as *;
+@use "../../styles/utils/mixins" as *;
+@use "../../styles/utils/breakpoints" as *;
+
+main {
+  margin-bottom: 3rem;
+
+  .bottom {
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .arrow {
+      cursor: pointer;
+
+      &.inactive {
+        i {
+          color: #5b9bf3;
+          opacity: 0.3;
+        }
+      }
+
+      i {
+        color: $primary-color;
+        font-size: 1.4rem;
+      }
+
+      &.left {
+        margin-right: 80px;
+        @include breakpoint-down(sm) {
+          margin-right: 25px;
+        }
+      }
+
+      &.right {
+        margin-left: 80px;
+        @include breakpoint-down(sm) {
+          margin-left: 25px;
+        }
+      }
+    }
+
+    .dots-container {
+      margin: 0rem 1rem;
+      display: flex;
+
+      .dots {
+        height: 8.5px;
+        width: 8.5px;
+        border-radius: 50%;
+        margin-right: 15px;
+        cursor: pointer;
+
+        &.active {
+          background-color: $primary-color;
+        }
+
+        &.inactive {
+          background: #5b9bf3;
+          opacity: 0.3;
+        }
+      }
+    }
+  }
+
+  .container {
+    @include container;
+    background: linear-gradient(208.18deg, #67c3f3 9.05%, #5a98f2 76.74%);
+    border-radius: 24px;
+    padding: 2.2rem 1.3rem;
+    color: white;
+    position: relative;
+
+    @include breakpoint-down(sm) {
+      min-height: 535px;
+    }
+
+    .dots-img {
+      position: absolute;
+      right: -3%;
+      top: 0;
+      z-index: 3;
+    }
+
+    .heading-2 {
+      &::after {
+        content: "";
+        display: block;
+        width: 60px;
+        height: 4px;
+        background-color: white;
+        text-align: center;
+        margin: 1rem 0;
+      }
+
+      @include breakpoint-up(sm) {
+        text-align: center;
+
+        &::after {
+          text-align: center;
+          margin: 1rem auto;
+        }
+      }
+    }
+
+    .content {
+      padding: 1rem 0;
+
+      img {
+        border-radius: 50%;
+        height: 150px;
+        width: 150px;
+      }
+
+      @include breakpoint-up(xl) {
+        width: 80%;
+        margin: 2rem auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+
+        .left {
+          display: flex;
+          align-items: center;
+
+          img {
+            max-width: 100%;
+            object-fit: cover;
+          }
+
+          &--content {
+            margin-left: 1rem;
+          }
+        }
+
+        .right {
+          p {
+            line-height: 1.7rem;
+          }
+        }
+      }
+
+      @include custom-breakpoint(sm, xl) {
+        width: 90%;
+        margin: 2rem auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        .left {
+          margin-bottom: 2rem;
+          &--content {
+            text-align: center;
+          }
+        }
+      }
+
+      @include breakpoint-down(sm) {
+        .left {
+          text-align: center;
+        }
+        .right {
+          margin-top: 1.5rem;
+        }
+      }
+    }
+  }
+}

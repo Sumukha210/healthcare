@@ -17,6 +17,8 @@
     :imgUrl="'/images/download-apps.png'"
     :content="`Our dedicated patient engagement app and web portal allow you to access information instantaneously (no tedeous form, long calls, or administrative hassle) and securely`"
   />
+
+  <Testimonial />
 </template>
 
 <script>
@@ -24,6 +26,7 @@ import Navbar from "./components/navbar/Navbar.vue";
 import Hero from "./components/hero/Hero.vue";
 import Services from "./components/services/Services.vue";
 import ColumnContainer from "./components/shared/column-container/Column-container.vue";
+import Testimonial from "./components/testimonial/Testimonial.vue";
 
 export default {
   components: {
@@ -31,9 +34,9 @@ export default {
     Hero,
     Services,
     ColumnContainer,
+    Testimonial,
   },
 };
 </script>
-
 
 <style lang="scss" src="./styles/style.scss" ></style>
