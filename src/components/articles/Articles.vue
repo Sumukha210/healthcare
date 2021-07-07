@@ -1,5 +1,5 @@
 <template>
-  <main class="margin-top">
+  <main class="margin-top" id="articles">
     <div class="container">
       <h2 class="heading-2">Check out our latest article</h2>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="container margin-top">
+  <div id="apps" class="container margin-top">
     <div class="left" :style="{ order: imgFirst ? 1 : 2 }">
       <img :src="imgUrl" alt="hero image" />
     </div>

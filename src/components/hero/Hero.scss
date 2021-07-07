@@ -4,6 +4,10 @@
 
 .container {
   @include container;
+  @include breakpoint-down(sm) {
+    margin-top: 6rem !important;
+  }
+  // position: relative;
 
   .left {
     p {

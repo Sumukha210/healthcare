@@ -9,11 +9,11 @@
       </div>
 
       <ul :class="`menu ${!isOpen && 'open'}`">
-        <li><a href="#" class="active">Home</a></li>
-        <li><a href="#">Find a doctor</a></li>
-        <li><a href="#">Apps</a></li>
-        <li><a href="#">Tesimonials</a></li>
-        <li><a href="#">About us</a></li>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#apps">Apps</a></li>
+        <li><a href="#tesimonials">Tesimonials</a></li>
+        <li><a href="#articles">Articles</a></li>
       </ul>
 
       <div class="mobileMenu" @click="handleMenu()">

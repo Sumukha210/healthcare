@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container" id="home">
     <div class="left">
       <div class="content">
         <h1 class="heading">

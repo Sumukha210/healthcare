@@ -1,6 +1,6 @@
 <template>
-  <main>
-    <div class="container margin-top">
+  <main class="margin-top" id="services">
+    <div class="container">
       <header>
         <h2 class="heading-2">Our Services</h2>
         <p>
