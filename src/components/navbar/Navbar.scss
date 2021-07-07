@@ -70,7 +70,7 @@ nav {
       top: -150vh;
       left: 0%;
       right: 0%;
-      width: 50vh;
+      width: 70vh;
       margin: auto;
       height: 50vh;
       background-color: $primary-color;
@@ -86,6 +86,7 @@ nav {
 
       @include breakpoint-down(sm) {
         width: 90%;
+        height: 70vh;
       }
 
       li {

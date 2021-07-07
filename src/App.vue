@@ -19,6 +19,7 @@
   />
 
   <Testimonial />
+  <Articles />
 </template>
 
 <script>
@@ -27,6 +28,7 @@ import Hero from "./components/hero/Hero.vue";
 import Services from "./components/services/Services.vue";
 import ColumnContainer from "./components/shared/column-container/Column-container.vue";
 import Testimonial from "./components/testimonial/Testimonial.vue";
+import Articles from "./components/articles/Articles.vue";
 
 export default {
   components: {
@@ -35,6 +37,7 @@ export default {
     Services,
     ColumnContainer,
     Testimonial,
+    Articles,
   },
 };
 </script>

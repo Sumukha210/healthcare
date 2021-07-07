@@ -1,0 +1,84 @@
+@use "../../styles/utils/variables" as *;
+@use "../../styles/utils/mixins" as *;
+@use "../../styles/utils/breakpoints" as *;
+
+main {
+  .container {
+    @include container;
+
+    .content {
+      margin-top: 2.5rem;
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      justify-content: space-between;
+      grid-column-gap: 1.5rem;
+
+      .subTitle {
+        color: $light-gray;
+      }
+    }
+
+    .heading-2 {
+      margin-bottom: 1rem;
+      &::after {
+        content: "";
+        display: block;
+        text-align: center;
+        height: 4px;
+        width: 50px;
+        margin: 1.2rem auto;
+        background-color: $primary-color;
+      }
+
+      @include breakpoint-down(sm) {
+        text-align: left;
+      }
+
+      @include breakpoint-up(sm) {
+        text-align: center;
+      }
+    }
+
+    .card {
+      margin-bottom: 2rem;
+      &-img-top {
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+      &-body {
+        margin: 1rem 0rem;
+      }
+
+      &-title {
+        margin-bottom: 0.8rem;
+      }
+
+      &-subTitle {
+        line-height: 1.5rem;
+        color: $light-gray;
+      }
+
+      &-footer {
+        color: $primary-color;
+        font-weight: 700;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        span {
+          margin-left: 15px;
+        }
+      }
+    }
+
+    .btn-container {
+      @include breakpoint-up(sm) {
+        text-align: center;
+        margin-top: 3rem;
+      }
+    }
+  }
+}
