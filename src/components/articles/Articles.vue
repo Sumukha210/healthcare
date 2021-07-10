@@ -1,6 +1,6 @@
 <template>
-  <main class="margin-top" id="articles">
-    <div class="container">
+  <section class="margin-top" id="articles">
+    <div class="primary-container">
       <h2 class="heading-2">Check out our latest article</h2>
 
       <div class="content">
@@ -27,7 +27,7 @@
         <button class="btn btn-outline-primary">View all</button>
       </div>
     </div>
-  </main>
+  </section>
 </template>
 
 <script>

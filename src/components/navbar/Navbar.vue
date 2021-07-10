@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <div class="container">
+    <div class="secondary-container">
       <div class="logo">
         <img
           :src="!isOpen ? '/images/logo-light.png' : '/images/logo.png'"
@@ -9,11 +9,11 @@
       </div>
 
       <ul :class="`menu ${!isOpen && 'open'}`">
-        <li><a href="#home" class="active">Home</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#apps">Apps</a></li>
-        <li><a href="#tesimonials">Tesimonials</a></li>
-        <li><a href="#articles">Articles</a></li>
+        <li @click="closeMenu()"><a href="#home" class="active">Home</a></li>
+        <li @click="closeMenu()"><a href="#services">Services</a></li>
+        <li @click="closeMenu()"><a href="#apps">Apps</a></li>
+        <li @click="closeMenu()"><a href="#tesimonials">Tesimonials</a></li>
+        <li @click="closeMenu()"><a href="#articles">Articles</a></li>
       </ul>
 
       <div class="mobileMenu" @click="handleMenu()">
@@ -44,6 +44,11 @@ export default {
       } else {
         document.body.style.overflow = "initial";
       }
+    },
+
+    closeMenu() {
+      this.isOpen = true;
+      document.body.style.overflow = "initial";
     },
   },
 };

@@ -4,7 +4,7 @@
       <h3>loading....</h3>
     </div>
 
-    <div class="container" v-if="testimonials.length">
+    <div class="primary-container" v-if="testimonials.length">
       <header>
         <h2 class="heading-2">What our customer are saying</h2>
       </header>

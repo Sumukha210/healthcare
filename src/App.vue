@@ -20,6 +20,7 @@
 
   <Testimonial />
   <Articles />
+  <Footer />
 </template>
 
 <script>
@@ -29,6 +30,7 @@ import Services from "./components/services/Services.vue";
 import ColumnContainer from "./components/shared/column-container/Column-container.vue";
 import Testimonial from "./components/testimonial/Testimonial.vue";
 import Articles from "./components/articles/Articles.vue";
+import Footer from "./components/footer/Footer.vue";
 
 export default {
   components: {
@@ -38,6 +40,7 @@ export default {
     ColumnContainer,
     Testimonial,
     Articles,
+    Footer,
   },
 };
 </script>

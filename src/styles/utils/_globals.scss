@@ -2,6 +2,7 @@
 
 @import "./variables";
 @import "./breakpoints";
+@import "./mixins";
 
 * {
   margin: 0;
@@ -66,5 +67,32 @@ body {
 
   @include breakpoint-down(sm) {
     margin-top: 3rem !important;
+  }
+}
+
+.primary-container {
+  @include breakpoint-down(xxl) {
+    @include container;
+  }
+
+  @include breakpoint-up(xxl) {
+    max-width: 1360px !important;
+    margin: auto;
+  }
+}
+
+.secondary-container {
+  @include breakpoint-down(xxl) {
+    @include container;
+  }
+
+  @include breakpoint-up(xxl) {
+    max-width: 1360px !important;
+    margin: auto;
+  }
+
+  @include breakpoint-up(extra-large) {
+    max-width: 1700px !important;
+    margin: auto;
   }
 }

@@ -2,8 +2,7 @@
 @use "../../../styles/utils/mixins" as *;
 @use "../../../styles/utils/breakpoints" as *;
 
-.container {
-  @include container;
+.primary-container {
   display: grid;
 
   img {

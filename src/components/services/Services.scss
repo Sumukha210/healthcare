@@ -14,9 +14,7 @@ main {
     // height: 400px;
   }
 
-  .container {
-    @include container;
-
+  .primary-container {
     .btn-container {
       @include breakpoint-up(sm) {
         text-align: center;
@@ -67,7 +65,7 @@ main {
     .card-container {
       margin-top: 4rem !important;
       display: grid;
-      justify-content: space-around;
+      justify-content: space-between;
       width: 100%;
       column-gap: 2rem;
       position: relative;
