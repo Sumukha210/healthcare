@@ -6,7 +6,6 @@
   @include breakpoint-down(sm) {
     margin-top: 6rem !important;
   }
-  // position: relative;
 
   .left {
     p {
@@ -17,6 +16,8 @@
 
     button {
       margin-top: 1rem;
+      // visibility: hidden;
+      opacity: 0;
     }
   }
 

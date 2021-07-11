@@ -1,5 +1,5 @@
 <template>
-  <main class="margin-top" id="tesimonials">
+  <main class="margin-top" id="testimonial">
     <div v-if="loading === true" style="text-align: center">
       <h3>loading....</h3>
     </div>
@@ -10,15 +10,15 @@
       </header>
 
       <div class="content">
-        <div class="left">
+        <div ref="left" class="left">
           <img :src="testimonials[currentItem].avatar" alt="" />
           <div class="left--content">
-            <h3>{{ testimonials[currentItem].first_name }}</h3>
-            <p>{{ testimonials[currentItem].email }}</p>
+            <h3 ref="name">{{ testimonials[currentItem].first_name }}</h3>
+            <p ref="email">{{ testimonials[currentItem].email }}</p>
           </div>
         </div>
 
-        <div class="right">
+        <div ref="right" class="right">
           <p>
             "Hello, my name is {{ testimonials[currentItem].first_name }}
             {{ testimonials[currentItem].last_name }} Lorem ipsum dolor sit amet
@@ -48,7 +48,7 @@
           ]"
           v-for="item in testimonials"
           :key="item.id"
-          @click="currentItem = item.id - 1"
+          @click="dots(item)"
         ></div>
       </div>
       <div class="arrow right" @click="next()">
@@ -58,8 +58,9 @@
   </main>
 </template>
 
-<script>
+<script >
 import axios from "axios";
+import { gsap } from "gsap";
 
 export default {
   data() {
@@ -72,6 +73,7 @@ export default {
   },
   methods: {
     next() {
+      this.animate();
       if (this.currentItem >= this.testimonials.length - 1) {
         this.currentItem = 0;
       } else {
@@ -79,11 +81,27 @@ export default {
       }
     },
     prev() {
+      this.animate();
       if (this.currentItem > 0) {
         this.currentItem = this.currentItem - 1;
       }
     },
+
+    dots(item) {
+      this.animate();
+      this.currentItem = item.id - 1;
+    },
+
+    animate() {
+      const { left, name, email, right } = this.$refs;
+      const timeline = gsap.timeline({ defaults: { duration: 1 } });
+      timeline
+        .from(left, { opacity: 0, x: -50, ease: "power3" })
+        .from([name, email], { opacity: 0, stagger: 0.5 }, "-=0.5")
+        .from(right, { opacity: 0, x: 50, ease: "power3" }, "-=0.5");
+    },
   },
+
   mounted() {
     this.loading = true;
     this.$nextTick(async () => {
