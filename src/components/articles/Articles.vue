@@ -24,14 +24,40 @@
       </div>
 
       <div class="btn-container">
-        <button class="btn btn-outline-primary">View all</button>
+        <button ref="btn" class="btn btn-outline-primary">View all</button>
       </div>
     </div>
   </section>
 </template>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 export default {
+  mounted() {
+    const { btn } = this.$refs;
+    const timeline = gsap.timeline({
+      defaults: {
+        duration: 1,
+      },
+      scrollTrigger: {
+        trigger: "#articles",
+        start: "bottom center",
+        end: "70% top",
+      },
+    });
+    gsap.registerPlugin(ScrollTrigger);
+
+    timeline
+      .from("#articles .card", {
+        y: 80,
+        opacity: 0,
+        stagger: 0.6,
+      })
+      .to(btn, { opacity: 1, visibility: "visible" }, "-=1");
+  },
+
   data() {
     return {
       articles: [

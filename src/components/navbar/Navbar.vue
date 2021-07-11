@@ -5,6 +5,7 @@
         <img
           :src="!isOpen ? '/images/logo-light.png' : '/images/logo.png'"
           alt="logo"
+          @click="scrollToFun('hero')"
         />
       </div>
 
@@ -104,9 +105,8 @@ export default {
     updateCurrentEle(val) {
       ScrollTrigger.create({
         trigger: val,
-        // offsetY: 300,
-        start: "-100",
-        // start: "top",
+        start: "20% center",
+        end: "bottom center",
         onEnter: (self) => {
           this.currentEle = self.trigger.id;
         },
@@ -118,13 +118,17 @@ export default {
     },
 
     closeMenu(val) {
+      this.scrollToFun(val);
+
+      this.isOpen = true;
+      document.body.style.overflow = "initial";
+    },
+
+    scrollToFun(val) {
       gsap.to(window, {
         duration: 1.7,
         scrollTo: { y: `#${val}`, offsetY: 100 },
       });
-
-      this.isOpen = true;
-      document.body.style.overflow = "initial";
     },
   },
 };

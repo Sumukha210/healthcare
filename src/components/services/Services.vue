@@ -35,7 +35,7 @@
       </div>
 
       <div class="btn-container">
-        <button class="btn btn-outline-primary">Learn more</button>
+        <button ref="btn" class="btn btn-outline-primary">Learn more</button>
       </div>
     </div>
 
@@ -47,7 +47,43 @@
 <style scoped lang="scss" src="./Services.scss"></style>
 
 <script>
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default {
+  mounted() {
+    const { btn } = this.$refs;
+    const timeline = gsap.timeline({
+      defaults: {
+        duration: 1,
+      },
+      scrollTrigger: {
+        trigger: "#services",
+        start: "top center",
+        end: "20% top",
+      },
+    });
+    gsap.registerPlugin(ScrollTrigger);
+
+    timeline
+      .from(["#services h2", "#services p"], {
+        stagger: 0.3,
+        y: -20,
+        opacity: 0,
+      })
+      .from("#services .card", {
+        y: 80,
+        opacity: 0,
+        stagger: 0.6,
+        scrollTrigger: {
+          trigger: "#services",
+          start: "top center",
+          end: "20% top",
+          scrub: 0.3,
+        },
+      })
+      .to(btn, { opacity: 1, visibility: "visible" }, "-=1.5");
+  },
+
   data() {
     return {
       services: [

@@ -9,6 +9,11 @@
     max-width: 100%;
   }
 
+  button {
+    visibility: hidden;
+    opacity: 0;
+  }
+
   @include breakpoint-up(lg) {
     width: 100%;
     grid-template-columns: repeat(2, 1fr);

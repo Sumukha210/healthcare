@@ -5,6 +5,11 @@
 main {
   position: relative;
 
+  button {
+    visibility: hidden;
+    opacity: 0;
+  }
+
   .LargeBgImg {
     position: absolute;
     top: 0%;

@@ -4,6 +4,11 @@
 
 section {
   .primary-container {
+    button.btn {
+      visibility: hidden;
+      opacity: 0;
+    }
+
     .content {
       margin-top: 2.5rem;
       width: 100%;
