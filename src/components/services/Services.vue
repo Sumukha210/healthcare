@@ -77,8 +77,9 @@ export default {
         scrollTrigger: {
           trigger: "#services",
           start: "top center",
-          end: "20% top",
-          scrub: 0.3,
+          end: window.innerWidth < 768 ? "bottom center" : "20% top",
+          // end: "bottom center",
+          scrub: 0.7,
         },
       })
       .to(btn, { opacity: 1, visibility: "visible" }, "-=1.5");
