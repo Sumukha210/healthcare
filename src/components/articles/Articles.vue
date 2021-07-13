@@ -43,8 +43,8 @@ export default {
       },
       scrollTrigger: {
         trigger: "#articles",
-        start: "bottom center",
-        end: "15% center",
+        start: "90% center",
+        end: "bottom center",
       },
     });
     gsap.registerPlugin(ScrollTrigger);
@@ -54,6 +54,8 @@ export default {
         y: 80,
         opacity: 0,
         stagger: 0.6,
+        ease: "elastic",
+        duration: 1.5,
       })
       .to(btn, { opacity: 1, visibility: "visible" }, "-=1");
   },
