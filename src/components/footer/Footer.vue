@@ -14,10 +14,10 @@
       <div class="content">
         <h4>Company</h4>
         <ul>
-          <li>About</li>
-          <li>Testimonial</li>
-          <li>Find a doctor</li>
-          <li>Apps</li>
+          <li @click="moveUpFun('about')">About</li>
+          <li @click="moveUpFun('testimonial')">Testimonial</li>
+          <li @click="moveUpFun('services')">Find a doctor</li>
+          <li @click="moveUpFun('apps')">Apps</li>
         </ul>
       </div>
 
@@ -67,10 +67,13 @@ export default {
     gsap.registerPlugin(scrollTo);
   },
   methods: {
-    moveUpFun() {
+    moveUpFun(location = "hero") {
       gsap.to(window, {
         duration: 1.7,
-        scrollTo: { y: `#hero`, offsetY: 10 },
+        scrollTo: {
+          y: `#${location}`,
+          offsetY: location === "hero" ? 5 : 100,
+        },
       });
     },
   },

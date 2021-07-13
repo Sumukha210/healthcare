@@ -92,9 +92,10 @@ export default {
         document.body.style.overflow = "hidden";
         gsap.from("li", {
           opacity: 0,
-          x: -20,
-          duration: 1.6,
-          stagger: 0.3,
+          x: -40,
+          duration: 0.7,
+          delay: 0.6,
+          stagger: 0.4,
           ease: "power3",
         });
       } else {
