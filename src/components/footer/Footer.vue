@@ -41,7 +41,38 @@
         </ul>
       </div>
     </div>
+
+    <button class="up-btn" @click="moveUpFun()">
+      <i class="fas fa-arrow-up"></i>
+    </button>
   </section>
 </template>
 
 <style scoped lang="scss" src="./Footer.scss"></style>
+
+<script>
+import { gsap } from "gsap";
+import { scrollTo } from "gsap/ScrollToPlugin";
+
+export default {
+  mounted() {
+    gsap.from(".up-btn", {
+      bottom: "6%",
+      yoyo: true,
+      repeat: -1,
+      duration: 0.8,
+      ease: "none",
+    });
+
+    gsap.registerPlugin(scrollTo);
+  },
+  methods: {
+    moveUpFun() {
+      gsap.to(window, {
+        duration: 1.7,
+        scrollTo: { y: `#hero`, offsetY: 10 },
+      });
+    },
+  },
+};
+</script>

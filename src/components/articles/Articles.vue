@@ -43,8 +43,10 @@ export default {
       },
       scrollTrigger: {
         trigger: "#articles",
-        start: "90% center",
-        end: "bottom center",
+        // start: "90% center",
+        // end: "bottom center",
+        start: "top center",
+        end: window.innerWidth < 768 ? "bottom center" : "20% top",
       },
     });
     gsap.registerPlugin(ScrollTrigger);

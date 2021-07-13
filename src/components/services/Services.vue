@@ -69,6 +69,7 @@ export default {
         stagger: 0.3,
         y: -20,
         opacity: 0,
+        ease: "elastic",
       })
       .from("#services .card", {
         y: 80,

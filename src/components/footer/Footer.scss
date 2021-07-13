@@ -5,6 +5,25 @@
 section {
   color: white;
   background: linear-gradient(183.41deg, #67c3f3 -8.57%, #5a98f2 82.96%);
+  position: relative;
+  padding: 5rem 0rem;
+
+  .up-btn {
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: linear-gradient(120deg, $primary-color 30%, cyan);
+    color: white;
+    box-shadow: 0 0 4px silver;
+  }
 
   li {
     list-style: none;
@@ -18,7 +37,6 @@ section {
   }
 
   .secondary-container {
-    padding: 5rem 0rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
