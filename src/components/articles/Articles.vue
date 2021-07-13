@@ -44,7 +44,7 @@ export default {
       scrollTrigger: {
         trigger: "#articles",
         start: "bottom center",
-        end: "70% top",
+        end: "50% center",
       },
     });
     gsap.registerPlugin(ScrollTrigger);
