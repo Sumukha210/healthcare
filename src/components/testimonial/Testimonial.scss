@@ -18,13 +18,6 @@ main {
     .arrow {
       cursor: pointer;
 
-      &.inactive {
-        i {
-          color: #5b9bf3;
-          opacity: 0.3;
-        }
-      }
-
       i {
         color: lighten($primary-color, 10%);
         font-size: 1.4rem;

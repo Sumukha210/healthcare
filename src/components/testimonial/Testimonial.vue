@@ -34,10 +34,7 @@
     </div>
 
     <div class="bottom">
-      <div
-        :class="['arrow', 'left', `${currentItem <= 0 && 'inactive'}`]"
-        @click="prev()"
-      >
+      <div :class="['arrow', 'left']" @click="prev()">
         <i class="fas fa-arrow-left"></i>
       </div>
       <div class="dots-container">
@@ -84,6 +81,8 @@ export default {
       this.animate();
       if (this.currentItem > 0) {
         this.currentItem = this.currentItem - 1;
+      } else {
+        this.currentItem = this.testimonials.length - 1;
       }
     },
 
@@ -98,7 +97,7 @@ export default {
       timeline
         .from(left, { opacity: 0, x: -50, ease: "power3" })
         .from([name, email], { opacity: 0, stagger: 0.5 }, "-=0.5")
-        .from(right, { opacity: 0, x: 50, ease: "power3" }, "-=0.5");
+        .from(right, { opacity: 0, x: 50, ease: "power3" }, "-=1");
     },
   },
 
