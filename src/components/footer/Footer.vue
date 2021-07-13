@@ -56,13 +56,13 @@ import { scrollTo } from "gsap/ScrollToPlugin";
 
 export default {
   mounted() {
-    gsap.from(".up-btn", {
-      bottom: "6%",
-      yoyo: true,
-      repeat: -1,
-      duration: 0.8,
-      ease: "none",
-    });
+    // gsap.from(".up-btn", {
+    //   bottom: "6%",
+    //   yoyo: true,
+    //   repeat: -1,
+    //   duration: 0.8,
+    //   ease: "none",
+    // });
 
     gsap.registerPlugin(scrollTo);
   },

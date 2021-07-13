@@ -84,13 +84,13 @@ nav {
     .menu {
       position: absolute;
       top: 100%;
-      right: -100%;
+      right: -150vh;
       width: 300px;
       margin: auto;
       height: 92vh;
       background-color: $primary-color;
       z-index: 1000;
-      transition: all 0.5s ease-in-out;
+      transition: all 0.7s ease-in-out;
 
       display: flex;
       flex-direction: column;

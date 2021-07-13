@@ -8,6 +8,10 @@ section {
   position: relative;
   padding: 5rem 0rem;
 
+  @include breakpoint-down(sm) {
+    padding: 3rem 0rem;
+  }
+
   .up-btn {
     position: absolute;
     bottom: 2%;
@@ -44,7 +48,14 @@ section {
   }
 
   .content {
-    margin-bottom: 1.5rem;
+    @include breakpoint-up(sm) {
+      margin-bottom: 1.5rem;
+    }
+
+    @include breakpoint-down(sm) {
+      margin-bottom: 3rem;
+    }
+
     &:first-child {
       img {
         margin-bottom: 1rem;
